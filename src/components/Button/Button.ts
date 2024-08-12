@@ -1,12 +1,12 @@
 import { LitElement, css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-@customElement('simple-greeting')
-export class SimpleGreeting extends LitElement {
+@customElement('lit-ui-button')
+export class Button extends LitElement {
   // Define scoped styles right with your component, in plain CSS
   static styles = css`
     :host {
-      color: blue;
+      background: blue;
     }
   `;
 
@@ -16,6 +16,6 @@ export class SimpleGreeting extends LitElement {
 
   // Render the UI as a function of component state
   render() {
-    return html`<p>Hello, ${this.name}!</p>`;
+    return html`<button>Hello, ${this.name}!</button>`;
   }
 }
