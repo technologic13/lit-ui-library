@@ -1,21 +1,41 @@
-import { LitElement, css, html } from 'lit';
+import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-
 @customElement('lit-ui-button')
 export class Button extends LitElement {
-  // Define scoped styles right with your component, in plain CSS
   static styles = css`
-    :host {
-      background: blue;
+    .button-lit {
+      background-color: #007bff; // Bootstrap primary blue
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #0056b3; // Darker blue on hover
+      }
+
+      &:active {
+        background-color: #004085; // Even darker blue on active
+      }
+
+      &:disabled {
+        background-color: #cccccc; // Grey when disabled
+        cursor: not-allowed;
+      }
     }
   `;
-
   // Declare reactive properties
   @property()
   name?: string = 'World';
+  @property()
+  styles?: string;
 
   // Render the UI as a function of component state
   render() {
-    return html`<button>Hello, ${this.name}!</button>`;
+    return html`<style>
+        ${this.styles}</style
+      ><button class="button-lit">Hello, ${this.name}!</button>`;
   }
 }

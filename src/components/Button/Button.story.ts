@@ -10,7 +10,7 @@ export default {
 };
 
 const Template = ({ name }: { name: string }) =>
-  html`<lit-ui-button .name=${name}></lit-ui-button>`;
+  html`<lit-ui-button .name=${name} />`;
 
 export const Default = Template.bind({});
 Default.args = {
